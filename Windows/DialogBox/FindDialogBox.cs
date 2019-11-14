@@ -49,7 +49,7 @@ namespace DialogBox
             // Find matches
             if (_matches == null)
             {
-                var pattern = findWhatTextBox.Text;
+                var pattern = Regex.Escape(findWhatTextBox.Text);
 
                 // Match whole word?
                 if ((bool) matchWholeWordCheckBox.IsChecked) pattern = @"(?<=\W{0,1})" + pattern + @"(?=\W)";
