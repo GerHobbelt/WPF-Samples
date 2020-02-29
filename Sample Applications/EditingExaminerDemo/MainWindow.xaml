@@ -23,7 +23,7 @@
                 </TabItem>
                 <TabItem Header="Help"
                          AutomationProperties.HelpText="Help Tab: The content in this tab explains how to use the demo.">
-                    <FlowDocumentScrollViewer Margin="10" BorderBrush="Black" BorderThickness="1">
+                    <FlowDocumentScrollViewer Margin="10" Style="{StaticResource ScrollViewer}">
                         <FlowDocument
                             ColumnWidth="400"
                             IsOptimalParagraphEnabled="True" IsHyphenationEnabled="True">
@@ -202,7 +202,7 @@ Selection = RichTextBox.Selection;
                 </TabItem>
             </TabControl>
             <StackPanel Name="Panel3">
-                <Label Name="Label1" BorderThickness="1,0,1,0" BorderBrush="Gray" HorizontalContentAlignment="Center"
+                <Label Name="Label1" BorderThickness="1,0,1,0" Style="{StaticResource ImmediateWindowLabel}" HorizontalContentAlignment="Center"
                        Width="400" Height="25">
                     Immediate Window
                 </Label>
@@ -215,7 +215,7 @@ Selection = RichTextBox.Selection;
             </StackPanel>
         </StackPanel>
         <StackPanel Name="Panel4">
-            <TextBox Name="ErrorMessageBox" Foreground="Red" BorderBrush="Red" Height="60" IsReadOnly="True">No exception!</TextBox>
+            <TextBox Name="ErrorMessageBox" Height="60" IsReadOnly="True" Style="{StaticResource ErrorMessageTextBox}">No exception!</TextBox>
         </StackPanel>
     </StackPanel>
 </Window>
