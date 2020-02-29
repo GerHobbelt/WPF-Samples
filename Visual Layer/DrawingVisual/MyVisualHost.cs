@@ -31,7 +31,7 @@ namespace DrawingVisual
         // the child visual objects.
         private void MyVisualHost_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            // Retreive the coordinates of the mouse button event.
+            // Retrieve the coordinates of the mouse button event.
             Point pt = e.GetPosition((UIElement) sender);
 
             // Initiate the hit test by setting up a hit test result callback method.
@@ -87,7 +87,7 @@ namespace DrawingVisual
                     new Typeface("Verdana"),
                     36, Brushes.Black),
                 new Point(200, 116));
-#pragma warning enable CS0618 // 'FormattedText.FormattedText(string, CultureInfo, FlowDirection, Typeface, double, Brush)' is obsolete: 'Use the PixelsPerDip override'
+#pragma warning restore CS0618 // 'FormattedText.FormattedText(string, CultureInfo, FlowDirection, Typeface, double, Brush)' is obsolete: 'Use the PixelsPerDip override'
 
             // Close the DrawingContext to persist changes to the DrawingVisual.
             drawingContext.Close();
