@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MultiThreadingWebBrowser"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525" Loaded="OnLoaded">
+        Title="MainWindow" Height="350" Width="600" Loaded="OnLoaded">
     <StackPanel Name="Stack" Orientation="Vertical">
         <StackPanel Orientation="Horizontal">
             <Button Content="New Window"
