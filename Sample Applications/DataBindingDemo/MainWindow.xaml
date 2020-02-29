@@ -8,8 +8,7 @@
         Title="List of Products" SizeToContent="WidthAndHeight">
     <Window.Resources>
             <DataTemplate x:Key="GroupingHeaderTemplate">
-                <TextBlock Text="{Binding Path=Name}"
-                           Foreground="Navy" FontWeight="Bold" FontSize="12" />
+                <TextBlock Text="{Binding Path=Name}" Style="{StaticResource GroupHeaderStyle}"/>
             </DataTemplate>
 
             <CollectionViewSource
@@ -53,7 +52,7 @@
         </CheckBox>
 
 
-        <ListBox Name="Master" Grid.Row="2" Grid.ColumnSpan="3" Margin="8"
+        <ListBox Name="Master" AutomationProperties.Name="Master" Grid.Row="2" Grid.ColumnSpan="3" Margin="8"
                  ItemsSource="{Binding Source={StaticResource ListingDataView}}">
             <ListBox.GroupStyle>
                 <GroupStyle
