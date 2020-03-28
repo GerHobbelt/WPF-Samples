@@ -69,6 +69,10 @@ param(
   [ValidateSet('', $null, 'netcoreapp3.1', 'netcoreapp5.0', IgnoreCase=$true)]
   $TargetFramework='', 
 
+  [bool] [Alias('s')]
+  [Parameter(HelpMessage='Determines if individual application publishing is self-contained or not.')]
+  $SelfContained=$true, 
+
   [switch]
   [Parameter(HelpMessage='Do not actually build - DryRun mode')]
   $DryRun,
@@ -287,9 +291,9 @@ Function Get-BuildArgs {
     $LangVersion = 'latest'
     
     if (-not $Restore) {
-        $BuildArgs = "$escapeparser /bl:$LogFile /p:Platform=$Platform /p:LangVersion=$LangVersion /p:PublishDir=$PublishDir /p:UseCommonOutputDirectory=true /p:TargetFramework=$TargetFramework /p:RuntimeIdentifier=$RuntimeIdentifier /clp:Summary;Verbosity=$Verbosity /nr:$NodeReuse"
+        $BuildArgs = "$escapeparser /bl:$LogFile /p:Platform=$Platform /p:LangVersion=$LangVersion /p:PublishDir=$PublishDir /p:UseCommonOutputDirectory=true /p:TargetFramework=$TargetFramework /p:RuntimeIdentifier=$RuntimeIdentifier /clp:Summary;Verbosity=$Verbosity /nr:$NodeReuse /p:SelfContained=$SelfContained"
     } else {
-        $BuildArgs = "$escapeparser /bl:$RestoreLogFile /p:TargetFramework=$TargetFramework /p:RuntimeIdentifier=$RuntimeIdentifier /clp:Summary;Verbosity=$Verbosity /nr:$NodeReuse"
+        $BuildArgs = "$escapeparser /bl:$RestoreLogFile /p:TargetFramework=$TargetFramework /p:RuntimeIdentifier=$RuntimeIdentifier /clp:Summary;Verbosity=$Verbosity /nr:$NodeReuse /p:SelfContained=$SelfContained"
     }
     
     if ($UseMsBuild) {
